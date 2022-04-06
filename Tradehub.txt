@@ -1,7 +1,7 @@
 create database tradehub;
 use usussybaka;
 
-create table account(
+create table accountdata(
 	account_id int unsigned not null auto_increment,
 	account_username varchar(50) not null,
 	account_password varchar(50) not null, 
@@ -18,3 +18,8 @@ create table product(
 
 	constraint product_id_PK primary key (product_id)
 );
+
+insert into accountdata values(null, "F3lix", "definitlyNotU", "schaity@gmail.com");
+insert into accountdata values(null, "PatiLetsPlay", "definitlyU", "PatiLetsPlay@gmx.at");
+insert into product values(null, "RTX3090", "Grafikkarte", "Alter krass");
+insert into product values(null, "Sebastian", "Wesen", "Erträgliches Wesen");
