@@ -7,4 +7,5 @@ Tauschbörse für Tests/Schularbeiten, Sklaven, Memes und Dickpics
 
 
 Was brauchen wir für die datenbank:
-
+ - ACC
+ - products
