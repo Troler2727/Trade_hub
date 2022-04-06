@@ -1,2 +1,2 @@
 # Trade_hub
-Tauschbörse für Tests/Schularbeiten und Dickpics
+Tauschbörse für Tests/Schularbeiten, Sklaven und Dickpics
