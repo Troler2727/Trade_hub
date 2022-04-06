@@ -9,3 +9,16 @@ Tauschbörse für Tests/Schularbeiten, Sklaven, Memes und Dickpics
 Was brauchen wir für die datenbank:
  - ACC
  - products
+
+Seiten
+ Acc creation/login
+ Acc overview
+ Mainpage (nav nar für kategorien und suchfeld)
+ Meme upload
+ 
+ Pati db
+ Feli egal
+ sebi main page
+ Pdf hochladen auf mysql
+ 
+ 
