@@ -1,0 +1,20 @@
+create database tradehub;
+use usussybaka;
+
+create table account(
+	account_id int unsigned not null auto_increment,
+	account_username varchar(50) not null,
+	account_password varchar(50) not null, 
+	account_email varchar(50) not null,
+	
+	constraint account_id_PK primary key (account_id)
+);
+
+create table product(
+	product_id int unsigned not null auto_increment,
+	product_name varchar(100) not null,
+	product_category varchar(50) not null,
+	product_decription varchar(200) not null,
+
+	constraint product_id_PK primary key (product_id)
+);
