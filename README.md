@@ -17,8 +17,11 @@ Seiten
  Meme upload
  
  Pati db
+ 
  Feli egal
+ 
  sebi main page
+ 
  Pdf hochladen auf mysql
  
  
