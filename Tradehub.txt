@@ -1,5 +1,11 @@
-create database tradehub;
-use usussybaka;
+cd c:\xampp\mysql\bin
+mysql -u root
+use web3bg1;
+
+create database tradehub utf8mb4_general_ci;
+use tradehub;
+drop table if exists picture;
+drop table if exists accountdata;
 
 create table accountdata(
 	account_id int unsigned not null auto_increment,
@@ -10,16 +16,18 @@ create table accountdata(
 	constraint account_id_PK primary key (account_id)
 );
 
-create table product(
-	product_id int unsigned not null auto_increment,
-	product_name varchar(100) not null,
-	product_category varchar(50) not null,
-	product_decription varchar(200) not null,
+create table picture(
+	picture_id int unsigned not null auto_increment,
+	picture_name varchar(100) not null,	
+	picture_ending varchar(30) not null, 
+	picture_description varchar(100) null,
 
-	constraint product_id_PK primary key (product_id)
+	constraint picture_id_PK primary key (picture_id),
+	constraint picture_id_FK foreign key (picture_id) references accountdata(account_id)
 );
 
-insert into accountdata values(null, "F3lix", "definitlyNotU", "schaity@gmail.com");
+insert into accountdata values(null, "F3lix", "definitlyNotU", "scheity.scheity@scheity.scheity");
 insert into accountdata values(null, "PatiLetsPlay", "definitlyU", "PatiLetsPlay@gmx.at");
-insert into product values(null, "RTX3090", "Grafikkarte", "Alter krass");
-insert into product values(null, "Sebastian", "Wesen", "Erträgliches Wesen");
+insert into picture values(null, "Hausaufgabe_Physik", "pdf", "HÜ für den 20.4.2022");
+insert into picture values(null, "Einfach Straßenkampf", "png", "Die haben für 30 Minuten geboxt");
+
