@@ -2,7 +2,7 @@ cd c:\xampp\mysql\bin
 mysql -u root
 use web3bg1;
 
-create database tradehub utf8mb4_general_ci;
+create database tradehub;
 use tradehub;
 drop table if exists picture;
 drop table if exists accountdata;
