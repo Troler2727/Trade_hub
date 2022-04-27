@@ -1,6 +1,7 @@
 cd c:\xampp\mysql\bin
 mysql -u root
 
+drop database if exists tradehub;
 create database tradehub;
 use tradehub;
 drop table if exists picture;
