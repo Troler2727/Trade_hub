@@ -1,6 +1,5 @@
 cd c:\xampp\mysql\bin
 mysql -u root
-use web3bg1;
 
 create database tradehub;
 use tradehub;
