@@ -17,17 +17,17 @@ create table accountdata(
 );
 
 create table picture(
-	picture_id int unsigned not null auto_increment,
 	picture_name varchar(100) not null,	
 	picture_ending varchar(30) not null, 
 	picture_description varchar(100) null,
+	account_id int unsigned not null, 
 
-	constraint picture_id_PK primary key (picture_id),
-	constraint picture_id_FK foreign key (picture_id) references accountdata(account_id)
+	constraint picture_name_PK primary key (picture_name),
+	constraint accountdata_FK foreign key (account_id) REFERENCES accountdata(account_id)
 );
 
 insert into accountdata values(null, "F3lix", "definitlyNotU", "scheity.scheity@scheity.scheity");
 insert into accountdata values(null, "PatiLetsPlay", "definitlyU", "PatiLetsPlay@gmx.at");
-insert into picture values(null, "Hausaufgabe_Physik", "pdf", "HÜ für den 20.4.2022");
-insert into picture values(null, "Einfach Straßenkampf", "png", "Die haben für 30 Minuten geboxt");
+insert into picture values("hrgo23r98zthnfew923nfewo", "pdf", "HÜ für den 20.4.2022", 1);
+insert into picture values("ngwu3afi3hodpgwjeu873nf", "png", "Die haben für 30 Minuten geboxt", 2);
 
