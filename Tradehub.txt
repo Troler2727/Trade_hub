@@ -18,7 +18,6 @@ create table accountdata(
 
 create table picture(
 	picture_name varchar(100) not null,	
-	picture_ending varchar(30) not null, 
 	picture_description varchar(100) null,
 	account_id int unsigned not null, 
 
@@ -28,6 +27,5 @@ create table picture(
 
 insert into accountdata values(null, "F3lix", "definitlyNotU", "scheity.scheity@scheity.scheity");
 insert into accountdata values(null, "PatiLetsPlay", "definitlyU", "PatiLetsPlay@gmx.at");
-insert into picture values("hrgo23r98zthnfew923nfewo", "pdf", "HÜ für den 20.4.2022", 1);
-insert into picture values("ngwu3afi3hodpgwjeu873nf", "png", "Die haben für 30 Minuten geboxt", 2);
+
 

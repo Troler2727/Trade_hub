@@ -31,7 +31,7 @@
     <h1><u>Accountdaten:</u></h1> 
         
     <?php
-     /* echo "<table class='table table-bordered table-hover table-striped'>";
+      echo "<table class='table table-bordered table-hover table-striped'>";
         echo "<tr>";
             echo "<th class='info col-sm-3'>ID</th>";
             echo "<th class='info col-sm-6'>E-mail</th>";
@@ -47,7 +47,7 @@
              echo "</tr>";
          }    
       echo "</table>";  
-      */
+      
         
     echo "<p><center><a class='btn btn-primary btn-lg btn-block data-toggle='tooltip' data-placement='bottom' title='Einfügen' href='einfuegen.html'>Einfügen</a><center></p>"; 
         
