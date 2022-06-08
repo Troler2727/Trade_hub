@@ -1,0 +1,70 @@
+<head>  
+    <title>Trade-Hub-Test</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+            #content{margin-top: 100px;}
+        </style>
+    </head>
+ <body>
+     
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="main.html">Trade-Hub</a>
+            </div>
+            <ul class="nav navbar-nav">
+            <li class="passive"><a href="main.html">Home</a></li>
+            <li class="active"><a href="alleBilder.php">Bilder</a></li>
+            <li><a href="https://www.youtube.com/watch?v=rjsnK-NRCac">Nudes</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            <li><a href="einfuegen.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+    </div>
+    </nav>
+
+    
+    <div class="container" id="content">
+        <button class="btn btn-primary" onclick="akt()"> Aktualisieren</button>
+        <div id="table"></div>
+    </div>
+    <script>
+     
+        // Display an array as HTML Table
+        function arr2Table(arr) {
+            let txt = '<table class="table table-bordered table-hover">';
+            // für jedes Objekt im Array
+            for (let i=0; i < arr.length; i++) {
+                let obj = arr[i];
+                txt += "<tr>";  // Neue Zeile in der Tabelle
+                // für jedes Attribut des Objektes
+                for (let x in obj) {
+                    txt += '<td>' + "<img src= upload/" + obj[x]  + "> </td>";
+                    alert(txt); 
+                }
+                txt += "</tr>";
+            }
+            txt += '</table>';
+            // alert(txt);
+            return txt;
+        }
+        
+        function akt() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                let arr = JSON.parse(this.responseText);
+                let html = arr2Table(arr);
+                // in Seite einbauen
+                document.getElementById("table").innerHTML = html;
+                };
+           xhttp.open("GET", "alleBilder.php?t=" + Math.random());
+           xhttp.send();
+        }
+        </script>
+        
+</body>
