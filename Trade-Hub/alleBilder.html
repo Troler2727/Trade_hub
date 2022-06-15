@@ -1,13 +1,64 @@
 <head>  
     <title>Trade-Hub-Test</title>
-     <meta charset="utf-8">
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- The form -->
+    <form class="example">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form> 
+    
+
+
+    <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <style>
             #content{margin-top: 100px;}
+
+
+        
+            * {
+                box-sizing: border-box;
+                }
+
+                form.example input[type=text] {
+                padding: 10px;
+                font-size: 17px;
+                border: 1px solid grey;
+                float: left;
+                width: 80%;
+                background: #f1f1f1;
+                }
+
+                form.example button {
+                float: left;
+                width: 20%;
+                padding: 10px;
+                background: #2196F3;
+                color: white;
+                font-size: 17px;
+                border: 1px solid grey;
+                border-left: none;
+                cursor: pointer;
+                }
+
+                form.example button:hover {
+                background: #0b7dda;
+                }
+
+                form.example::after {
+                content: "";
+                clear: both;
+                display: table;
+                }
+
         </style>
+
     </head>
  <body>
      
@@ -25,29 +76,61 @@
             <li><a href="einfuegen.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
-    </div>
-    </nav>
+        
+            <div class="container-fluid navbar-right">
+                <form class="navbar-form navbar-left">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                  </div>
+                  <button type="button" class ="btn btn-primary" onclick="akt()">Suche</button>
+                </form>
 
-    
-    <div class="container" id="content">
-        <button class="btn btn-primary" onclick="akt()"> Aktualisieren</button>
-        <div id="table"></div>
-    </div>
+            </nav>
+        </div>
+
+<div class="container" id="content">
+    <div id="table"></div>
+</div>
+
+
+
+
+
+
+
+
+
     <script>
      
         // Display an array as HTML Table
         function arr2Table(arr) {
             let txt = '<table class="table table-bordered table-hover">';
             // für jedes Objekt im Array
-            for (let i=0; i < arr.length; i++) {
+            for (let i=0; i < arr.length; i+2) {
+                
                 let obj = arr[i];
+                let obj2 = {};
+                if(i+1 <arr.length ){ obj2 = arr[i+1];}
+                
                 txt += "<tr>";  // Neue Zeile in der Tabelle
                 // für jedes Attribut des Objektes
                 for (let x in obj) {
-                    txt += '<td>' + "<img src= upload/" + obj[x]  + "> </td>";
-                    alert(txt); 
+                   
+                    txt += '<td>';
+                    txt += "<img height='250px' width='500' src='upload/";
+                    txt +=  obj[x]; 
+                    txt += "'> </td>";
+                
                 }
-                txt += "</tr>";
+                if(i+1 <arr.length ){
+                for (let x in obj2) {
+                    txt += '<td>' ;
+                    txt += "<img height='250px' width='500' src='upload/" ;
+                    txt +=  obj2[x]; 
+                    txt += "'> </td>";
+                
+                }}
+                txt = txt + "</tr>";
             }
             txt += '</table>';
             // alert(txt);
